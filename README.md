@@ -13,6 +13,7 @@ Things it should include:
 * Automatic image optimization, with src/optimized directories.
 * Grunt build for the above, with logical watches.
 * qUnit (perhaps Jasmine) JS Unit tests, nodeunit build tests, Travis CLI integration.
+* docco JS documentation.
 
 ## License
 Copyright (c) 2013 George Pantazis
