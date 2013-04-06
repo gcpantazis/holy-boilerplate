@@ -2,22 +2,22 @@
   "name": "holy-boilerplate",
   "description": "A mashup of all my current favorite front-end tech.",
   "version": "0.0.1",
-  "homepage": "https://github.com/gcpantazis/Holy-Boilerplate",
+  "homepage": "https://github.com/gcpantazis/holy-boilerplate",
   "author": {
     "name": "George Pantazis",
     "url": "http://www.georgepantazis.com/"
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gcpantazis/Holy-Boilerplate.git"
+    "url": "https://github.com/gcpantazis/holy-boilerplate.git"
   },
   "bugs": {
-    "url": "https://github.com/gcpantazis/Holy-Boilerplate/issues"
+    "url": "https://github.com/gcpantazis/holy-boilerplate/issues"
   },
   "licenses": [
     {
       "type": "MIT",
-      "url": "https://github.com/gcpantazis/Holy-Boilerplate/blob/master/LICENSE.md"
+      "url": "https://github.com/gcpantazis/holy-boilerplate/blob/master/LICENSE.md"
     }
   ],
   "main": "Gruntfile.js",
