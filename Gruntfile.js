@@ -1,8 +1,7 @@
 /*
- * grunt-contrib-jade
- * http://gruntjs.com/
+ * holy-boilerplate
  *
- * Copyright (c) 2012 Eric Woroshow, contributors
+ * Copyright (c) 2013 George Pantazis
  * Licensed under the MIT license.
  */
 
@@ -22,6 +21,17 @@ module.exports = function(grunt) {
       }
     },
 
+    jade:{
+      docs:{
+        options: {
+          pretty: true
+        },
+        files: [
+          {expand:true, cwd:'src/html/pages', src:['**/*.jade'], dest:'build/', ext:'.html'}
+        ]
+      }
+    },
+
     // Before generating any new files, remove any previously-created files.
     clean: {
       test: ['build']
@@ -33,6 +43,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-nodeunit');
   grunt.loadNpmTasks('grunt-contrib-internal');
+  grunt.loadNpmTasks('grunt-contrib-copy');
+  grunt.loadNpmTasks('grunt-contrib-compass');
+  grunt.loadNpmTasks('grunt-contrib-jade');
+  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks('grunt-requirejs');
+  grunt.loadNpmTasks('grunt-doccoh');
 
   grunt.registerTask('test', ['clean', 'jshint']);
   grunt.registerTask('default', ['clean', 'jshint']);

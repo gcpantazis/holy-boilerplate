@@ -14,8 +14,10 @@ Things it should include:
 * Scaffolds to create NodeJS app when needed, with Heroku procfiles, etc.
 * Automatic image optimization, with src/optimized directories.
 * Grunt build for the above, with logical watches.
-* qUnit (perhaps Jasmine) JS Unit tests, nodeunit build tests, Travis CLI integration.
+* qUnit (perhaps Jasmine) JS Unit tests, nodeunit build tests, ~~Travis CLI integration~~.
 
 ## License
+
 Copyright (c) 2013 George Pantazis
-Licensed under the MIT license.
+
+*Licensed under the MIT license.*
