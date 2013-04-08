@@ -22,12 +22,12 @@ module.exports = function(grunt) {
     },
 
     jade:{
-      docs:{
+      common:{
         options: {
           pretty: true
         },
         files: [
-          {expand:true, cwd:'src/html/pages', src:['**/*.jade'], dest:'build/', ext:'.html'}
+          {expand:true, cwd:'src/common/html/pages', src:['**/*.jade'], dest:'build/', ext:'.html'}
         ]
       }
     },
