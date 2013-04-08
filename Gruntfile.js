@@ -50,6 +50,6 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-requirejs');
   grunt.loadNpmTasks('grunt-doccoh');
 
-  grunt.registerTask('test', ['clean', 'jshint']);
-  grunt.registerTask('default', ['clean', 'jshint']);
+  grunt.registerTask('test', ['default']);
+  grunt.registerTask('default', ['clean', 'jshint', 'jade']);
 };

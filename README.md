@@ -8,7 +8,7 @@ I need a new boilerplate, so I'm starting one with a gutted copy of [HTML5 Boile
 
 Things it should include:
 
-* Jade templates
+* ~~Jade templates~~
 * Sass/SCSS
 * RequireJS + Backbone. Module pattern w/ CommonJS style.
 * Scaffolds to create NodeJS app when needed, with Heroku procfiles, etc.

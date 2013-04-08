@@ -21,7 +21,10 @@ html(class="no-js")
 
   body
 
-    block content
+    include ../partials/header.jade
+
+    section#main-content
+      block content
 
     include ../partials/footer.jade
 
