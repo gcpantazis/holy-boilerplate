@@ -9,10 +9,46 @@
 
 module.exports = function(grunt) {
 
+  var jadeconfig = {
+
+    pretty: true,
+
+    data: {
+
+      partial: function(templatePath, dataObj){
+        var template = grunt.file.read(templatePath);
+
+        if (typeof(dataObj) === String) {
+          dataObj = grunt.file.readJSON(dataObj);
+        }
+
+        if(templatePath.match(/.jade/g)){
+          return require('grunt-contrib-jade/node_modules/jade').compile(template, {filename: templatePath})(dataObj);
+        } else {
+          return template;
+        }
+      },
+
+      data: function(path){
+        return grunt.file.readJSON(path);
+      },
+
+      locals: {
+        data: function(path){
+          return jadeconfig.data.data(path);
+        },
+        partial: function(templatePath, dataObj){
+          return jadeconfig.data.partial(templatePath, dataObj);
+        }
+      }
+    }
+  };
+
   // Project configuration.
   grunt.initConfig({
 
     jshint: {
+
       all: [
         'Gruntfile.js'
       ],
@@ -23,18 +59,35 @@ module.exports = function(grunt) {
 
     jade:{
       common:{
-        options: {
-          pretty: true
-        },
+        options: jadeconfig,
         files: [
-          {expand:true, cwd:'src/common/html/pages', src:['**/*.jade'], dest:'build/', ext:'.html'}
+          {
+            expand: true,
+            cwd: 'src/pages',
+            src: ['**/*.jade'],
+            dest: 'build/',
+            ext: '.html'
+          }
+        ]
+      },
+      modules:{
+        options: jadeconfig,
+        files: [
+          {
+            expand: true,
+            cwd: 'src/modules',
+            src: ['**/html/**/*-demo.jade'],
+            dest: 'build/demos/',
+            ext: '.html',
+            flatten: true
+          }
         ]
       }
     },
 
     // Before generating any new files, remove any previously-created files.
     clean: {
-      test: ['build']
+      build: ['build']
     }
 
   });
