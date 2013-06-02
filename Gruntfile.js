@@ -15,30 +15,24 @@ module.exports = function(grunt) {
 
     data: {
 
-      partial: function(templatePath, dataObj){
-        var template = grunt.file.read(templatePath);
-
-        if (typeof(dataObj) === String) {
-          dataObj = grunt.file.readJSON(dataObj);
-        }
-
-        if(templatePath.match(/.jade/g)){
-          return require('grunt-contrib-jade/node_modules/jade').compile(template, {filename: templatePath})(dataObj);
-        } else {
-          return template;
-        }
+      render: function(templatePath, dataObj){
+        return require('grunt-contrib-jade/node_modules/jade').compile(grunt.file.read(templatePath), {
+          filename: templatePath
+        })(dataObj);
       },
 
-      data: function(path){
+      getData: function(path){
         return grunt.file.readJSON(path);
       },
 
       locals: {
+
         data: function(path){
-          return jadeconfig.data.data(path);
+          return jadeconfig.data.getData(path);
         },
+
         partial: function(templatePath, dataObj){
-          return jadeconfig.data.partial(templatePath, dataObj);
+          return jadeconfig.data.render(templatePath, dataObj);
         }
       }
     }
